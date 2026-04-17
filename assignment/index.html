@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04 Activity 1 · grid columns · yale.arrgen observation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0f0f0f;   
+            font-family: 'Segoe UI', Roboto, system-ui, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+            line-height: 1.5;
+            color: #f7f7f7;
+            padding: 2.5rem 1.5rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .page-header {
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #ffffff;  
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .page-header h1 {
+            font-weight: 500;
+            font-size: 1.9rem;
+            letter-spacing: 1px;
+            color: #ffffff;
+            text-transform: uppercase;
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            word-spacing: 2px;
+        }
+        
+        .page-header .site-ref {
+            font-size: 0.9rem;
+            background: #e8dfd3;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            color: #ffffff;
+            border: 1px solid #cbb295;
+        }
+        .page-header .site-ref strong {
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+
+        .grid-columns {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.8rem;
+            margin: 1.5rem 0 0.8rem 0;
+        }
+
+        .column-header {
+            font-size: 1.9rem;
+            font-weight: 420;
+            letter-spacing: -0.01em;
+           
+            padding-left: 1.2rem;
+            margin-top: 0;
+            margin-bottom: 1.25rem;
+            line-height: 1.2;
+            text-transform: uppercase;
+            font-family: 'Quicksand', 'Segoe UI', sans-serif;
+            color: #ffffff;
+            word-break: break-word;
+        }
+       
+        .observation-text {
+            font-size: 1rem;
+            color: #fefefe;
+            background: rgba(250, 249, 248, 0.5);
+            padding: 1.1rem 1rem;
+            border-radius: 20px;
+            margin-bottom: 1rem;
+            border: 1px dashed #dacbbc;
+            flex: 1;
+        }
+
+        .observation-text p {
+            margin-bottom: 1rem;
+        }
+
+        .observation-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .observation-text strong {
+            color: #464646;
+            font-weight: 550;
+            background: #bdb9b9;
+            padding: 0.08rem 0.3rem;
+            border-radius: 6px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="page-header">
+        <h1>YALE SCHOOL OF ART</h1>
+    </div>
+
+    
+    <div class="grid-columns">
+        
+        <div class="column-card">
+            <div class="column-header">User Experience</div>
+            <div class="observation-text">
+                <p><strong>User Experience:</strong> Everything feels confusing because of how chaotic it is made. The website uses 
+                    <strong>Many bright colors</strong> which does not compliment each other at all.</p>
+                <p><strong>Navigation:</strong> The navigation created here looks weird, its just a small box in the top left also the quicklinks looks so out of place 
+                    because its beside the introduction of the website.</p>
+            </div>
+        </div>
+        
+
+        <div class="column-card">
+            <div class="column-header">Content</div>
+            <div class="observation-text">
+                <p><strong>Core message:</strong> The website content are all around and in random order its like something that is put without thinking of its proper layout, 
+                    although the buttons and navigation are out of order as well it still function correctly. There are also also some random objects that should not be there at all, 
+                    And finally the background image is not fiting and is coming out as a repititive grid rather than a proper background.</p>       
+            </div>
+        </div>
+
+        <div class="column-card">
+            <div class="column-header">Grid Layout</div>
+            <div class="observation-text">
+                <p><strong>Grid:</strong> The page uses a really imbalance Grid Layout, Some of the Grid layout is not fitting on the supposed content inside them. 
+                    Some doe not even have a padding, There is also the problem with the margins and the items looking so out of order and balance. 
+                    Overall it is creating a chaotic layout for the website because of how unorder it looks and the improper use of grid,padding, and margins.</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
