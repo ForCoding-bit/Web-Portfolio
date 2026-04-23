@@ -1,14 +1,12 @@
-* {
+*{
     box-sizing: border-box; /* --- Nag aalign nung pinaka content--- */
     margin: 0;
     padding: 0;
 }
 
 body {
-    background: linear-gradient(white); 
+    background:(white); 
 }
-
-
 
 /*======================*/
 /* --- Nav Section --- */
@@ -34,10 +32,8 @@ body {
         font-weight: bold;
         font-size: 20px;
         color: white;
-        text-transform: uppercase;
         letter-spacing: 2px;
         padding: 10px;
-        margin-left: 5px;
     }
 
     ul {
@@ -87,7 +83,7 @@ body {
     position: relative;
     background-color:white;/*  #f9fbf9;  */
     overflow: hidden;
-    margin-bottom: 70px;
+    margin: 70px auto 70px auto;
 }
 
     /* Gagawa tayo ng pseudo-element para sa grid para ma-mask natin ito nang hindi nadadamay ang text */
@@ -116,14 +112,7 @@ body {
 .hero_section {
     display: grid; 
     grid-template-columns: 1.2fr 0.8fr; /* Hahatiin sa dalawang column; mas malapad ang kaliwa para sa text */
-    gap: 40px; /* Space sa pagitan ng text (kaliwa) at image (kanan) */
-    
-    width: 100%;
-    max-width: 1200px; /* Nililimitahan ang lapad para maganda ang alignment sa gitna */
-    margin: 0 auto; /* Sinisiguro na laging nasa gitna ng screen ang buong section */
-    align-items: center; /* Pantay ang taas ng text at image sa gitna ng grid */
-    padding: 0 50px; 
-    color: #0a0a0a;
+    gap: 50px;
 }
 
     .hero_content {
@@ -190,12 +179,13 @@ body {
             }
     
 
-    .hero_image {
-        display: flex;
-        justify-content: center; /* Nilalagay sa gitna ng kanang column ang magiging image/portrait */
-        align-items: center;
-        position: relative;
-    }   
+    /* Container ng Image */
+        .hero_image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }       
+
 
 
 
@@ -205,140 +195,163 @@ body {
 /*==========================*/
 /* --- About me Section --- */
 /*==========================*/
-#about{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 60px;
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto; 
-    margin-top: 70px;
-    margin-bottom: 70px;
-    
+#about {
+    background: linear-gradient(#86B087, #265526) ;
+    display: grid; /* Nilipat sa Grid gaya ng request mo */
+    /* Dito natin idinedetalye ang "mapa" ng layout mo */
+    grid-template-areas: 
+        "header header"  /* Ang h1 ay nasa taas at sakop ang dalawang columns */
+        "image  text";    /* Ang image ay nasa kaliwa, ang text ay nasa kanan */
+    grid-template-columns: 1fr 1.5fr; /* Mas malapad nang konti ang space para sa text */
+    gap: 40px; 
+    background-size: 600% 600%;
+    padding: 100px 5% 100px 5%; /* Ginawa nating percentage ang padding sa gilid para mas flexible */
+    margin: 70px auto;
+    align-items: center; /* Para pantay ang gitna ng image at text box */
+    animation: bg 3s ease infinite;
 }
 
-#about h1{
-    line-height: 1.6;
-    font-family: 'Poppins', sans-serif;
-    padding: 50px 50px 20px 50px;
-    font-size: 50px;
-    margin: 0;
-    background: linear-gradient(135deg, #86B087, #fcfbfb);
-    width: max-content;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
-}
+    #about h1 {
+        grid-area: header; /* Itinatalaga ang h1 sa 'header' area */
+        line-height: 1.6;
+        font-family: 'Poppins', sans-serif;
+        padding: 0 0 20px 0; /* Inalis ang sobrang padding para hindi lumayo sa image */
+        font-size: 50px;
+        margin: 80px 80px 50px 50px;
+        color: white;
+        width: max-content;
+    }
 
-#about h3{
-    font-family: 'Montserrat', sans-serif;
-    padding: 50px 20px ;
-    font-size: 20px;
-    font-weight: lighter;
-    background-color: white;
-    color: #86B087;
-    border-radius: 50px;
-    line-height: 1.6;
-    transition: color 6ms;
-    cursor: pointer;
-}
+    #pogi {
+        grid-area: image; /* Itinatalaga ang image sa 'image' area */
+        width: 100%;
+        height: auto;
+        margin-right: 50px;
+        border-radius: 20px;
+        justify-self: center; /* Pinapagitna ang image sa sarili niyang column */
+        animation: breath 10s ease-in-out infinite alternate;
+    }
 
-#about h3 strong{
-   font-weight: bold;
-}
+    #about h3 {
+        grid-area: text; /* Itinatalaga ang text box sa 'text' area */
+        font-family: 'Montserrat', sans-serif;
+        padding: 40px; /* Binawasan nang konti ang padding para mas compact */
+        font-size: 18px; /* Bahagyang in-adjust para sa readability */
+        font-weight: lighter;
+        background-color: white;
+        color: #86B087;
+        border-radius: 50px;
+        line-height: 1.6;
+        margin: 0;
+        transition: all 0.8s ease-in;
+    }
 
-#about h3:hover {
-  background-color: #86B087;
-  color: white;
-}
+        #about h3 strong {
+            font-weight: bold;
+        }
 
-#pogi {
-    width: 100%;
-    max-width: 450px;
-    height: auto;
-    aspect-ratio: 1 / 1; 
-    object-fit: cover;
-    border-radius: 60%;
-    animation: breath 10s ease-in-out infinite alternate;
-    will-change: transform;
-    transform-origin: center;
-}
+       
 
 
 
 /*==========================*/
 /* --- Language Card --- */
 /*==========================*/
+
 .skills .langH1 {
-    background: linear-gradient(135deg,  #86B087, #fcfbfb);
     width: max-content;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
+    color: #86B087;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 30px; 
 }
 
-.skills_container{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    gap: 20px;
-    padding: 20px;
+.skills_container h1 {
+    color: #86B087;
+    margin-left: 50px;
+    margin-right: auto;
+    margin-bottom: 30px;
+    margin-top: 50px;
+}
+/*==========================*/
+/* --- Language Card --- */
+/*==========================*/
+
+/* I-modify natin ang container para walang padding sa gilid at sagad sa screen */
+.skills_container {
+    padding: 20px 0; /* Tinanggal ang padding sa left at right */
     width: 100%;
-    max-width: 100%;
+    max-width: 100%; /* Pinalitan ang 1200px para sumagad sa screen */
+    margin: 0 auto;
 }
 
+/* --- CARD DESIGN (LALAKIHAN NATING SIZE) --- */
 .skill-card {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 20px 10px;
-    background-color:  #86B087; 
-    border-radius: 12px;
+    
+    /* MODIFIED: Mas malaking size at padding */
+    padding: 30px 20px; 
+    background-color: #86B087; 
+    border-radius: 15px; /* Bahagyang mas malaki ang pagka-bilog */
     transition: transform 0.4s ease, background-color 0.4s ease;
     
+    /* MODIFIED: Mas malaking width para siksik ang screen */
+    min-width: 280px; 
+    flex-shrink: 0;
 }
 
-/* Gradient border */
+/* Gradient border - No changes needed */
 .skill-card::before {
     content: "";
     position: absolute;
     inset: 0;
-    border-radius: 12px;
+    border-radius: 15px; /* Match standard border radius */
     padding: 2px; 
-    background: linear-gradient(135deg, #f5f7f7,  #86B087); 
+    background: linear-gradient(135deg, #f7f6f5, #86B087); 
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
     pointer-events: none;
 }
 
+/* MODIFIED: Lalakihan natin ang icons */
 .skill-card img {
-    width: 55px;
-    height: 55px;
+    width: 80px;
+    height: 80px;
     object-fit: contain;
-    margin-bottom: 12px;
+    margin-bottom: 15px;
 }
 
 .skill-card span {
     font-family: 'Roboto', sans-serif;
-    font-size: 13px;
+    /* MODIFIED: Mas malaking font size */
+    font-size: 16px; 
     font-weight: bold;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
     color: #ffffff;
     text-transform: uppercase;
 }
 
 .skill-card:hover {
-  background-color: #bedbbf;
-  transform: scale(1.2);
+    background-color: #bedbbf;
+    transform: scale(1.05); /* Binabaan nang kaunti ang scale para sa mas malaking cards */
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 .main-footer {
     background-color:#86B087; 

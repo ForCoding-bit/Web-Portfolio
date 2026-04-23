@@ -1,0 +1,76 @@
+/* --- SLIDER LOGIC --- */
+.slider-lang {
+    overflow: hidden;
+    width: 100%;
+    padding: 20px 0;
+    white-space: nowrap; 
+    position: relative;
+    /* Maaari mong dagdagan ng margin-bottom dito kung gusto mo ng space sa pagitan ng slider at footer */
+}
+
+.lang_grid {
+    display: flex;
+    width: max-content;
+    gap: 30px; /* Dinagdagan ang gap para sa mas malaking cards */
+    animation: left 40s linear infinite;
+}
+
+.lang_grid:hover {
+    animation-play-state: paused;
+}
+
+@keyframes left {
+    0% {
+        transform: translateX(-50%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+/* --- REVERSE SLIDER LOGIC --- */
+.slider-tech {
+    overflow: hidden;
+    width: 100%;
+    padding: 20px 0;
+    white-space: nowrap; 
+    position: relative;
+    /* Maaari mong dagdagan ng margin-bottom dito kung gusto mo ng space sa pagitan ng slider at footer */
+}
+
+.tech_grid {
+    display: flex;
+    width: max-content;
+    gap: 30px; /* Dinagdagan ang gap para sa mas malaking cards */
+    animation: right 40s linear infinite;
+}
+
+.tech_grid:hover {
+    animation-play-state: paused;
+}
+
+@keyframes right {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+
+/*---Linear gradient Background---*/
+
+@keyframes bg {
+
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 0%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+    
+}
