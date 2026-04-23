@@ -1,0 +1,13 @@
+#about h1{
+    line-height: 1.6;
+    font-family: 'Poppins', sans-serif;
+    padding: 50px 50px 20px 50px;
+    font-size: 50px;
+    margin: 0;
+    background: linear-gradient(135deg, #86B087, #fcfbfb);
+    width: max-content;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}/*transparent way to do headeer for darkmode
